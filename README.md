@@ -153,9 +153,12 @@ Platform-specific Binaries: The provided instructions and commands are specific 
 
 
 ## Future Enhancements
-** Support for more AWS resources **: Extend the tool to manage other AWS resources such as S3 buckets, RDS instances, and VPCs.
-** State Management ** : Implement state management to keep track of resources created and manage updates/destroy operations.
-** Configuration Validation **: Add validation for the configuration files to ensure they meet the necessary criteria before applying or planning.
-** User Interface **: Develop a simple UI for managing configurations and executing commands more easily.
+**Support for more AWS resources** : Extend the tool to manage other AWS resources such as S3 buckets, RDS instances, and VPCs.
+
+**State Management** : Implement state management to keep track of resources created and manage updates/destroy operations.
+
+**Configuration Validation** : Add validation for the configuration files to ensure they meet the necessary criteria before applying or planning.
+
+**User Interface** : Develop a simple UI for managing configurations and executing commands more easily.
 
 
