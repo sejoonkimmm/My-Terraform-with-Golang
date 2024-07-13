@@ -1,0 +1,8 @@
+provider:
+  region: eu-central-1
+
+resources:
+  - type: aws_instance
+    name: example
+    ami: ami-0346fd83e3383dcb4
+    instance_type: t2.micro
