@@ -1,5 +1,4 @@
 # Make my own Terraform with Golang
-# My Terraform
 
 This project is a Go implementation that mimics Terraform to create AWS EC2 instances using AWS CLI and YAML configuration files.
 
@@ -33,6 +32,15 @@ After installing, configure AWS CLI with your credentials:
 aws configure
 ```
 
+This will prompt you to enter your AWS Access Key ID, Secret Access Key, default region name, and default output format. Example:
+
+```mathematica
+AWS Access Key ID [None]: YOUR_ACCESS_KEY
+AWS Secret Access Key [None]: YOUR_SECRET_KEY
+Default region name [None]: eu-central-1
+Default output format [None]: json
+```
+
 ### Go Installation
 1. **macOS**:
 
@@ -54,7 +62,7 @@ sudo apt-get install golang
 Clone the repository:
 
 ```
-git clone https://github.com/sejoonkimmm/My-Terraform.git
+git clone https://github.com/sejoonkimmm/My-Terraform-with-Golang.git
 cd My-Terraform
 ```
 
@@ -130,7 +138,7 @@ macOS (Intel)
 
 Windows
 ```sh
-.\myterraform-windows-amd64.exe plan config.yaml
+./myterraform-windows-amd64.exe plan config.yaml
 ```
 Linux
 ```
@@ -142,3 +150,12 @@ Linux
 AWS CLI Installation: This project assumes that AWS CLI is installed and configured. If you do not wish to install AWS CLI, you can modify the code to use the aws-sdk-go directly.
 
 Platform-specific Binaries: The provided instructions and commands are specific to different platforms (Apple Silicon, Intel macOS, Windows, and Linux). Make sure to use the correct binary for your platform.
+
+
+## Future Enhancements
+** Support for more AWS resources **: Extend the tool to manage other AWS resources such as S3 buckets, RDS instances, and VPCs.
+** State Management ** : Implement state management to keep track of resources created and manage updates/destroy operations.
+** Configuration Validation **: Add validation for the configuration files to ensure they meet the necessary criteria before applying or planning.
+** User Interface **: Develop a simple UI for managing configurations and executing commands more easily.
+
+
