@@ -2,6 +2,10 @@
 
 This project is a Go implementation that mimics Terraform to create AWS EC2 instances using AWS CLI and YAML configuration files.
 
+# Why I Created This Project
+I created this project while studying for the 'AWS DOP-C02' certification to better understand AWS and Infrastructure as Code (IaC).
+This project allowed me to create my own Terraform-like tool to easily handle AWS instances and configurations using YAML files.
+
 ## Prerequisites
 
 1. **AWS CLI**: You need to have AWS CLI installed and configured. Follow the instructions here to install AWS CLI: [AWS CLI Installation Guide](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html)
