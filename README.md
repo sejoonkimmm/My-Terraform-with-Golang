@@ -8,6 +8,19 @@ This project is a Go implementation that mimics Terraform to create AWS EC2 inst
 
 2. **Go**: Ensure you have Go installed on your machine. Download and install Go from here: [Go Installation Guide](https://golang.org/doc/install)
 
+## Version 2 Features
+1. **Simplified Build Process**
+You no longer need to manually specify the operating system and architecture when building the project. Just run sh build.sh and the script will detect your OS and create the appropriate executable file.
+
+2. **Enhanced State Management**
+A tfstate file is now created for each resource based on its name. This allows you to track and manage the state of your resources more effectively.
+
+3. **Multiple YAML File Handling**
+The program now supports handling multiple YAML configuration files. You can specify multiple config files in a single command, and the program will process each one sequentially.
+
+4. **Simplified AWS CLI Integration**
+While you can still use shell scripts to run AWS CLI commands, this program allows you to define your infrastructure in YAML files and execute them directly, making the process much simpler and more intuitive.
+
 ## Setup
 
 ### AWS CLI Installation
@@ -155,10 +168,10 @@ Platform-specific Binaries: The provided instructions and commands are specific 
 ## Future Enhancements
 **Support for more AWS resources** : Extend the tool to manage other AWS resources such as S3 buckets, RDS instances, and VPCs.
 
-**State Management** : Implement state management to keep track of resources created and manage updates/destroy operations.
-
 **Configuration Validation** : Add validation for the configuration files to ensure they meet the necessary criteria before applying or planning.
 
 **User Interface** : Develop a simple UI for managing configurations and executing commands more easily.
+
+**Show the AWS AMI list** : added 'amilist' command, show the AMI catalog list.
 
 
