@@ -9,18 +9,25 @@ import (
 
 type StateManager struct {
 	stateFile string
-	State     map[string]bool
+	State     map[string]ResourceState
 }
 
-func NewStateManager() *StateManager {
+type ResourceState struct {
+	Type         string `json:"type"`
+	Name         string `json:"name"`
+	Ami          string `json:"ami,omitempty"`
+	InstanceType string `json:"instance_type,omitempty"`
+}
+
+func NewStateManager(stateFile string) *StateManager {
 	return &StateManager{
-		stateFile: "terraform.tfstate",
-		State:     make(map[string]bool),
+		stateFile: stateFile,
+		State:     make(map[string]ResourceState),
 	}
 }
 
 func (s *StateManager) LoadState() {
-	fmt.Println("Loading state...")
+	fmt.Printf("Loading state from %s...\n", s.stateFile)
 	data, err := ioutil.ReadFile(s.stateFile)
 	if err != nil {
 		if os.IsNotExist(err) {
@@ -37,8 +44,8 @@ func (s *StateManager) LoadState() {
 }
 
 func (s *StateManager) SaveState() {
-	fmt.Println("Saving state...")
-	data, err := json.Marshal(s.State)
+	fmt.Printf("Saving state to %s...\n", s.stateFile)
+	data, err := json.MarshalIndent(s.State, "", "  ")
 	if err != nil {
 		fmt.Printf("Error marshaling state: %v\n", err)
 		return
@@ -50,9 +57,10 @@ func (s *StateManager) SaveState() {
 }
 
 func (s *StateManager) ResourceExists(resourceName string) bool {
-	return s.State[resourceName]
+	_, exists := s.State[resourceName]
+	return exists
 }
 
-func (s *StateManager) AddResource(resourceName string) {
-	s.State[resourceName] = true
+func (s *StateManager) AddResource(resourceName string, resourceState ResourceState) {
+	s.State[resourceName] = resourceState
 }
